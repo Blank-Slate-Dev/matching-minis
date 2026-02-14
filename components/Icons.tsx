@@ -1,3 +1,4 @@
+// components/Icons.tsx
 interface IconProps {
   size?: number;
   className?: string;

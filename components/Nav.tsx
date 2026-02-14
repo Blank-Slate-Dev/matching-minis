@@ -1,7 +1,9 @@
+// components/Nav.tsx
 "use client";
 
 import { useState, useEffect } from "react";
-import { HeartIcon, CartIcon, MenuIcon, CloseIcon } from "./Icons";
+import Image from "next/image";
+import { CartIcon, MenuIcon, CloseIcon } from "./Icons";
 
 const NAV_LINKS = [
   { label: "Shop", href: "#product" },
@@ -23,21 +25,22 @@ export function Nav() {
   return (
     <>
       <nav
-        className={`fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 py-4 transition-all duration-400 md:px-8 ${
+        className={`fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 py-0 transition-all duration-400 md:px-8 ${
           scrolled
             ? "border-b border-rose-soft/20 bg-blush-50/92 shadow-sm backdrop-blur-xl"
             : "border-b border-transparent bg-transparent"
         }`}
       >
-        {/* Logo */}
-        <a href="#" className="flex items-center gap-1.5 no-underline">
-          <span className="font-display text-2xl font-bold text-rose-deep">
-            matching
-          </span>
-          <span className="font-display text-2xl font-semibold text-brand-text">
-            minis
-          </span>
-          <HeartIcon size={14} />
+        {/* Logo - negative margins eat the transparent padding in the PNG */}
+        <a href="#" className={`flex-shrink-0 ${mobileOpen ? "invisible md:visible" : ""}`}>
+          <Image
+            src="/MatchingMinisLogo.png"
+            alt="Matching Minis"
+            width={1097}
+            height={504}
+            className="-my-6 w-36 md:-my-8 md:w-48"
+            priority
+          />
         </a>
 
         {/* Desktop links */}
@@ -63,7 +66,7 @@ export function Nav() {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden"
+          className="relative z-50 md:hidden"
           aria-label="Toggle menu"
         >
           {mobileOpen ? <CloseIcon /> : <MenuIcon />}
@@ -73,6 +76,13 @@ export function Nav() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 bg-blush-50">
+          <Image
+            src="/MatchingMinisLogo.png"
+            alt="Matching Minis"
+            width={1097}
+            height={504}
+            className="-mb-2 w-64"
+          />
           {NAV_LINKS.map((link) => (
             <a
               key={link.label}

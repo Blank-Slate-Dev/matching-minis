@@ -1,3 +1,4 @@
+// components/WhySection.tsx
 "use client";
 
 import { useReveal } from "./useReveal";

@@ -1,3 +1,6 @@
+// components/Footer.tsx
+import Image from "next/image";
+
 const FOOTER_COLUMNS = [
   {
     title: "Shop",
@@ -21,9 +24,13 @@ export function Footer() {
         <div className="mb-10 grid grid-cols-2 gap-8 md:grid-cols-4">
           {/* Brand column */}
           <div className="col-span-2 md:col-span-1">
-            <span className="font-display text-xl font-bold text-rose-soft">
-              matching minis
-            </span>
+            <Image
+              src="/MatchingMinisLogo.png"
+              alt="Matching Minis"
+              width={1097}
+              height={504}
+              className="h-16 w-auto brightness-110"
+            />
             <p className="mt-3 max-w-[280px] font-body text-sm leading-relaxed text-rose-soft/60">
               Soft matching sleepwear for mums and their little ones. Made with
               love in Australia.

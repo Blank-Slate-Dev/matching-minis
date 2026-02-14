@@ -1,3 +1,4 @@
+// components/Hero.tsx
 "use client";
 
 import { useReveal } from "./useReveal";

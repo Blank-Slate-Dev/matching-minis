@@ -1,3 +1,4 @@
+// app/page.tsx
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { FeaturedProduct } from "@/components/FeaturedProduct";

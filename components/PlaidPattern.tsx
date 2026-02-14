@@ -1,3 +1,4 @@
+// components/PlaidPattern.tsx
 interface PlaidPatternProps {
   opacity?: number;
 }

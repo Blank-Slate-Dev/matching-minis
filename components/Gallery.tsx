@@ -1,15 +1,25 @@
+// components/Gallery.tsx
 "use client";
 
 import { useReveal } from "./useReveal";
 import { PlaidPattern } from "./PlaidPattern";
 
 const GALLERY_ITEMS = [
-  { emoji: "🛏️", label: "Bedtime stories", gradient: "from-blush-100 to-rose-soft/50" },
-  { emoji: "🥞", label: "Pancake mornings", gradient: "from-blush-200 to-blush-100" },
-  { emoji: "📸", label: "Matching moments", gradient: "from-rose-soft/40 to-blush-100" },
-  { emoji: "🧸", label: "Teddy bear picnics", gradient: "from-blush-100 to-rose-soft/30" },
-  { emoji: "🌙", label: "Goodnight cuddles", gradient: "from-rose-soft/50 to-blush-200" },
-  { emoji: "🎄", label: "Holiday matching", gradient: "from-blush-200 to-rose-soft/40" },
+  { emoji: "🛏️", label: "Bedtime stories" },
+  { emoji: "🥞", label: "Pancake mornings" },
+  { emoji: "📸", label: "Matching moments" },
+  { emoji: "🧸", label: "Teddy bear picnics" },
+  { emoji: "🌙", label: "Goodnight cuddles" },
+  { emoji: "🎄", label: "Holiday matching" },
+];
+
+const GRADIENTS = [
+  "#F9CDD755",
+  "#FADADD",
+  "#F0DCC844",
+  "#F9CDD744",
+  "#FADADD55",
+  "#F9CDD7",
 ];
 
 export function Gallery() {
@@ -32,9 +42,7 @@ export function Gallery() {
               className="group relative cursor-pointer overflow-hidden rounded-[20px] shadow-soft transition-all duration-400 hover:scale-[1.03] hover:shadow-soft-lg"
               style={{
                 aspectRatio: i === 0 || i === 5 ? "1/1.1" : "1/1",
-                background: `linear-gradient(${135 + i * 20}deg, #FFF0F3 0%, ${
-                  ["#F9CDD755", "#FADADD", "#F0DCC844", "#F9CDD744", "#FADADD55", "#F9CDD7"][i]
-                } 100%)`,
+                background: `linear-gradient(${135 + i * 20}deg, #FFF0F3 0%, ${GRADIENTS[i]} 100%)`,
               }}
             >
               <PlaidPattern opacity={0.08} />
