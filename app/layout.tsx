@@ -1,11 +1,15 @@
 // app/layout.tsx
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Matching Minis — Matching Sleepwear for Mum & Mini",
   description:
     "Soft, cozy matching flannelette pyjama sets for mums and their children. Made with love in Australia.",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#FFF0F3",
 };
 
 export default function RootLayout({

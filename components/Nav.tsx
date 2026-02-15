@@ -25,20 +25,20 @@ export function Nav() {
   return (
     <>
       <nav
-        className={`fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 py-0 transition-all duration-400 md:px-8 ${
+        className={`fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 py-2 transition-all duration-400 md:px-8 ${
           scrolled
-            ? "border-b border-rose-soft/20 bg-blush-50/92 shadow-sm backdrop-blur-xl"
+            ? "border-b border-rose-soft/20 bg-[#FFF7F8] shadow-sm"
             : "border-b border-transparent bg-transparent"
         }`}
       >
-        {/* Logo - negative margins eat the transparent padding in the PNG */}
+        {/* Logo */}
         <a href="#" className={`flex-shrink-0 ${mobileOpen ? "invisible md:visible" : ""}`}>
           <Image
             src="/MatchingMinisLogo.png"
             alt="Matching Minis"
             width={1097}
             height={504}
-            className="-my-6 w-36 md:-my-8 md:w-48"
+            className="w-36 md:w-48"
             priority
           />
         </a>
