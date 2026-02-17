@@ -25,45 +25,42 @@ export function Nav() {
   return (
     <>
       <nav
-        className={`fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 py-2 transition-all duration-400 md:px-8 ${
+        className={`fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 py-3 transition-all duration-300 md:px-12 ${
           scrolled
-            ? "border-b border-rose-soft/20 bg-[#FFF7F8] shadow-sm"
+            ? "border-b border-blush-200/60 bg-cream/95 backdrop-blur-md"
             : "border-b border-transparent bg-transparent"
         }`}
       >
-        {/* Logo */}
         <a href="#" className={`flex-shrink-0 ${mobileOpen ? "invisible md:visible" : ""}`}>
           <Image
             src="/MatchingMinisLogo.png"
             alt="Matching Minis"
             width={1097}
             height={504}
-            className="w-36 md:w-48"
+            className="w-28 md:w-36"
             priority
           />
         </a>
 
-        {/* Desktop links */}
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-10 md:flex">
           {NAV_LINKS.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="relative font-body text-sm font-medium tracking-wide text-brand-text-light transition-colors hover:text-brand-text"
+              className="font-body text-[13px] font-medium tracking-wide text-brand-text-light transition-colors hover:text-brand-text"
             >
               {link.label}
             </a>
           ))}
           <a
             href="#product"
-            className="btn-primary flex items-center gap-2 !px-5 !py-2.5 !text-sm"
+            className="flex items-center gap-2 rounded-full bg-brand-text px-6 py-2.5 font-body text-[13px] font-medium tracking-wide text-white transition-all hover:opacity-90"
           >
             <CartIcon />
-            Shop Now
+            Shop
           </a>
         </div>
 
-        {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="relative z-50 md:hidden"
@@ -73,22 +70,21 @@ export function Nav() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 bg-blush-50">
+        <div className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-7 bg-cream">
           <Image
             src="/MatchingMinisLogo.png"
             alt="Matching Minis"
             width={1097}
             height={504}
-            className="-mb-2 w-64"
+            className="mb-6 w-44"
           />
           {NAV_LINKS.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="font-body text-xl font-medium text-brand-text no-underline"
+              className="font-display text-2xl font-light tracking-wide text-brand-text"
             >
               {link.label}
             </a>
@@ -96,7 +92,7 @@ export function Nav() {
           <a
             href="#product"
             onClick={() => setMobileOpen(false)}
-            className="btn-primary"
+            className="btn-primary mt-4"
           >
             Shop Now
           </a>

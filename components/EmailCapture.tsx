@@ -3,7 +3,6 @@
 
 import { useState } from "react";
 import { useReveal } from "./useReveal";
-import { PlaidPattern } from "./PlaidPattern";
 
 export function EmailCapture() {
   const { ref, visible } = useReveal();
@@ -19,34 +18,27 @@ export function EmailCapture() {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden px-6 py-20"
-      style={{
-        background:
-          "linear-gradient(160deg, rgba(249,205,215,0.33) 0%, rgba(250,218,221,0.53) 50%, rgba(240,220,200,0.27) 100%)",
-      }}
+      className="bg-cream px-6 py-28 md:px-12"
     >
-      <PlaidPattern opacity={0.06} />
-
       <div
-        className={`relative z-10 mx-auto max-w-xl text-center transition-all duration-800 ease-out ${
+        className={`mx-auto max-w-2xl text-center transition-all duration-800 ease-out ${
           visible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
         }`}
       >
-        <div className="rounded-4xl border border-white bg-white/90 p-10 shadow-soft-lg backdrop-blur-sm md:p-12">
-          <span className="mb-4 block text-4xl">💌</span>
-
-          <h2 className="mb-2 font-display text-3xl text-brand-text md:text-4xl">
+        <div className="rounded-2xl border border-blush-200/50 bg-white p-12 shadow-soft md:p-16">
+          <span className="section-label">Stay in the Loop</span>
+          <h2 className="mb-4 mt-4 font-display text-3xl font-light tracking-tight text-brand-text md:text-4xl">
             Join The Mini Club
           </h2>
-          <p className="mb-8 font-body text-base leading-relaxed text-brand-text-light">
+          <p className="mb-10 font-body text-sm leading-relaxed text-brand-text-light">
             Get 10% off your first matching set, plus early access to new
-            prints, exclusive drops, and a whole lot of cozy inspo.
+            prints and exclusive drops.
           </p>
 
           {submitted ? (
-            <div className="rounded-2xl bg-blush-100 p-6">
-              <p className="font-display text-xl text-rose-deep">
-                You&apos;re in! 🎉
+            <div className="rounded-xl bg-blush-50 p-6">
+              <p className="font-display text-xl text-brand-text">
+                You&apos;re in ✓
               </p>
               <p className="mt-1 font-body text-sm text-brand-text-light">
                 Check your inbox for your 10% off code.
@@ -60,13 +52,13 @@ export function EmailCapture() {
                 onChange={(e) => setEmail(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
                 placeholder="your@email.com"
-                className="flex-1 rounded-xl border border-rose-soft bg-white px-5 py-3.5 font-body text-sm text-brand-text outline-none transition-all focus:border-rose-deep focus:ring-2 focus:ring-rose-soft/40"
+                className="flex-1 rounded-full border border-blush-200 bg-blush-50/50 px-6 py-3.5 font-body text-sm text-brand-text outline-none transition-all placeholder:text-brand-text-muted focus:border-brand-text/30 focus:ring-1 focus:ring-brand-text/10"
               />
               <button
                 onClick={handleSubmit}
-                className="btn-primary whitespace-nowrap !rounded-xl !px-7"
+                className="btn-primary whitespace-nowrap"
               >
-                Join 💕
+                Subscribe
               </button>
             </div>
           )}

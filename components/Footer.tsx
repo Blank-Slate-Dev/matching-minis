@@ -18,37 +18,34 @@ const FOOTER_COLUMNS = [
 
 export function Footer() {
   return (
-    <footer className="bg-brand-text px-6 pb-8 pt-12">
-      <div className="mx-auto max-w-5xl">
-        {/* Footer grid */}
-        <div className="mb-10 grid grid-cols-2 gap-8 md:grid-cols-4">
-          {/* Brand column */}
+    <footer className="border-t border-blush-200/50 bg-blush-50 px-6 pb-10 pt-16 md:px-12">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-12 grid grid-cols-2 gap-10 md:grid-cols-4">
           <div className="col-span-2 md:col-span-1">
             <Image
               src="/MatchingMinisLogo.png"
               alt="Matching Minis"
               width={1097}
               height={504}
-              className="h-16 w-auto brightness-110"
+              className="mb-4 w-28"
             />
-            <p className="mt-3 max-w-[280px] font-body text-sm leading-relaxed text-rose-soft/60">
+            <p className="max-w-[260px] font-body text-sm leading-relaxed text-brand-text-light">
               Soft matching sleepwear for mums and their little ones. Made with
               love in Australia.
             </p>
           </div>
 
-          {/* Link columns */}
           {FOOTER_COLUMNS.map((col) => (
             <div key={col.title}>
-              <p className="mb-4 font-body text-xs font-bold uppercase tracking-widest text-rose-soft">
+              <p className="mb-5 font-body text-[11px] font-medium uppercase tracking-[0.2em] text-brand-text">
                 {col.title}
               </p>
-              <ul className="space-y-2.5">
+              <ul className="space-y-3">
                 {col.links.map((link) => (
                   <li key={link}>
                     <a
                       href="#"
-                      className="font-body text-sm text-rose-soft/55 transition-colors hover:text-rose-soft"
+                      className="font-body text-sm text-brand-text-light transition-colors hover:text-brand-text"
                     >
                       {link}
                     </a>
@@ -59,17 +56,16 @@ export function Footer() {
           ))}
         </div>
 
-        {/* Bottom bar */}
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-rose-soft/15 pt-6 md:flex-row">
-          <p className="font-body text-xs text-rose-soft/40">
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-blush-200/50 pt-8 md:flex-row">
+          <p className="font-body text-xs text-brand-text-muted">
             © 2026 Matching Minis. All rights reserved.
           </p>
-          <div className="flex gap-6">
+          <div className="flex gap-8">
             {["Privacy", "Terms", "Cookies"].map((link) => (
               <a
                 key={link}
                 href="#"
-                className="font-body text-xs text-rose-soft/40 transition-colors hover:text-rose-soft/70"
+                className="font-body text-xs text-brand-text-muted transition-colors hover:text-brand-text-light"
               >
                 {link}
               </a>

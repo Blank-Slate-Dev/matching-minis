@@ -1,5 +1,5 @@
 /* app/globals.css */
-@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -12,59 +12,39 @@
   }
 
   body {
-    font-family: "Quicksand", sans-serif;
-    color: #4a3540;
+    font-family: "DM Sans", sans-serif;
+    color: #2C2426;
     overflow-x: hidden;
   }
 
   ::selection {
-    background: #f9cdd7;
-    color: #4a3540;
+    background: #EDCDD4;
+    color: #2C2426;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center gap-2 rounded-full bg-rose-deep px-7 py-3 font-body text-base font-bold text-white transition-all duration-300;
-    box-shadow: 0 8px 32px rgba(232, 135, 155, 0.4);
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-text px-8 py-3.5 font-body text-sm font-medium tracking-wide text-white transition-all duration-300;
   }
 
   .btn-primary:hover {
-    @apply -translate-y-0.5;
-    box-shadow: 0 12px 40px rgba(232, 135, 155, 0.5);
+    @apply -translate-y-px opacity-90;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center gap-2 rounded-full border-2 border-rose-soft bg-transparent px-7 py-3 font-body text-base font-semibold text-brand-text transition-all duration-300;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-brand-text/20 bg-transparent px-8 py-3.5 font-body text-sm font-medium tracking-wide text-brand-text transition-all duration-300;
   }
 
   .btn-secondary:hover {
-    @apply -translate-y-0.5 border-rose-deep/40 bg-rose-deep/5;
+    @apply -translate-y-px border-brand-text/40 bg-brand-text/[0.03];
   }
 
   .section-label {
-    @apply font-body text-xs font-bold uppercase tracking-[0.16em] text-rose-deep;
+    @apply font-body text-[11px] font-medium uppercase tracking-[0.2em] text-rose-deep;
   }
 
   .section-title {
-    @apply font-display text-4xl text-brand-text md:text-5xl;
-  }
-
-  .section-subtitle {
-    @apply font-body text-lg font-light leading-relaxed text-brand-text-light;
-  }
-
-  .card-hover {
-    @apply transition-all duration-400;
-  }
-
-  .card-hover:hover {
-    @apply -translate-y-1.5 shadow-soft-lg;
-  }
-}
-
-@layer utilities {
-  .duration-400 {
-    transition-duration: 400ms;
+    @apply font-display text-4xl font-light tracking-tight text-brand-text md:text-5xl;
   }
 }
